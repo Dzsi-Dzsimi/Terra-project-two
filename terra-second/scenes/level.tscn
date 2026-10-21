@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cprcvdxqw74ve"]
+
+[ext_resource type="Texture2D" uid="uid://s6j0u8atks1u" path="res://icon.svg" id="1_2q6dc"]
+[ext_resource type="Script" uid="uid://dcdmai6e1n7fi" path="res://scenes/level.gd" id="1_w8frs"]
+[ext_resource type="PackedScene" uid="uid://diq3dcitdg771" path="res://scenes/stick_figure.tscn" id="2_w7c3h"]
+[ext_resource type="Script" uid="uid://dfper85lsjg13" path="res://scenes/rigid_body_2d.gd" id="4_mx8sn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(118, 121)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(1268, 20)
+
+[node name="FirstScene" type="Node2D" unique_id=914573305]
+script = ExtResource("1_w8frs")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=626634032]
+position = Vector2(709, 261)
+texture = ExtResource("1_2q6dc")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D2" unique_id=1772604190]
+modulate = Color(0.6039216, 1, 0.8901961, 1)
+position = Vector2(-123, -9)
+texture = ExtResource("1_2q6dc")
+
+[node name="StickFigure" parent="." unique_id=635443853 instance=ExtResource("2_w7c3h")]
+position = Vector2(183, 253)
+
+[node name="RigidBody2D" type="CharacterBody2D" parent="." unique_id=1044215229]
+script = ExtResource("4_mx8sn")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" unique_id=980090302]
+texture = ExtResource("1_2q6dc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=208317251]
+position = Vector2(1, 0.5)
+shape = SubResource("RectangleShape2D_yf5fn")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1676246583]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1167178233]
+position = Vector2(605, 638)
+shape = SubResource("RectangleShape2D_g4v7s")
