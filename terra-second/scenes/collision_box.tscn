@@ -7,6 +7,7 @@
 size = Vector2(20, 15.833334)
 
 [node name="FinishArea2D" type="Area2D" unique_id=1438358285]
+collision_mask = 0
 script = ExtResource("1_pvrii")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=72832415]

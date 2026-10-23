@@ -1,11 +1,11 @@
 extends CharacterBody2D
 
 var direction: Vector2 = Vector2.ZERO
-var speed: int = 150
+var speed: int = 10000
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	direction = Input.get_vector("left", "right", "up", "down")
-	velocity = direction * speed
+	velocity = direction * speed * delta
 	animation()
 	move_and_slide()
 	
