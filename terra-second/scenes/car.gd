@@ -8,7 +8,7 @@ func _ready() -> void:
 	if position.x < 0:
 		direction.x = 1
 		$Sprite2D.flip_h = true
-		print("car direction")
+		# print("car direction")
 	$Sprite2D.texture = colours.pick_random()
 	
 func _process(delta: float) -> void:

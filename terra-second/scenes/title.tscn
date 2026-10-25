@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://biibmr25d7nqi"]
+
+[ext_resource type="FontFile" uid="uid://cnredbe6uqgcv" path="res://fonts/PeaberryDoublespace.woff2" id="1_4ignj"]
+[ext_resource type="Texture2D" uid="uid://bkgrir378horu" path="res://graphics/player/player_simple.png" id="2_wosw1"]
+
+[node name="Title" type="Control" unique_id=386927762]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=885988510]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.3882353, 0.23529412, 0.39607844, 1)
+
+[node name="Label" type="Label" parent="." unique_id=781891718]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -359.0
+offset_top = -70.0
+offset_right = 359.0
+offset_bottom = -250.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_4ignj")
+theme_override_font_sizes/font_size = 140
+text = "Car game"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2085459870]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_wosw1")
+
+[node name="Label2" type="Label" parent="." unique_id=278892864]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.0
+offset_top = 329.0
+offset_right = 59.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_4ignj")
+theme_override_font_sizes/font_size = 50
+text = "High score: 123"

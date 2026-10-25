@@ -23,6 +23,8 @@
 [ext_resource type="Texture2D" uid="uid://cxutqp0hti8vw" path="res://graphics/objects/bench.png" id="21_37s47"]
 [ext_resource type="Texture2D" uid="uid://c5iy3tuxd0vaw" path="res://graphics/objects/barrier.png" id="22_bt5mj"]
 [ext_resource type="Texture2D" uid="uid://dxciltwc3sgll" path="res://graphics/objects/house2.png" id="23_bt5mj"]
+[ext_resource type="FontFile" uid="uid://hqpa84d2dqvp" path="res://fonts/Better VCR 9.0.1.ttf" id="24_e1j6l"]
+[ext_resource type="Script" uid="uid://gc3fe0iuxkhn" path="res://scenes/label.gd" id="25_pl11u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(20, 640)
@@ -156,6 +158,9 @@ collision_mask = 2
 
 [node name="CarTimer" type="Timer" parent="Timer" unique_id=1535330555]
 wait_time = 0.2
+autostart = true
+
+[node name="ElapsedTimer" type="Timer" parent="Timer" unique_id=1509879662]
 autostart = true
 
 [node name="Objects" type="Node2D" parent="." unique_id=1372221445]
@@ -535,5 +540,24 @@ position = Vector2(208, -51)
 [node name="Marker2D9" type="Marker2D" parent="CarStartPositions" unique_id=150615548]
 position = Vector2(-199, -114)
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2077301863]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1814986693]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -166.25
+offset_right = 166.25
+offset_bottom = 55.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("24_e1j6l")
+theme_override_font_sizes/font_size = 20
+text = "Time elapsed: 0"
+script = ExtResource("25_pl11u")
+
 [connection signal="body_entered" from="Borders/FinishArea2D" to="." method="_on_finish_area_entered"]
 [connection signal="timeout" from="Timer/CarTimer" to="." method="_on_car_timer_timeout"]
+[connection signal="timeout" from="Timer/ElapsedTimer" to="CanvasLayer/Label" method="_on_elapsed_timer_timeout"]
