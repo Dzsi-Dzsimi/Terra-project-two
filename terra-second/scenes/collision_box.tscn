@@ -1,10 +1,9 @@
 [gd_scene format=3 uid="uid://0y405h37btlc"]
 
-[ext_resource type="Texture2D" uid="uid://d0dya2slufckd" path="res://graphics/cars/green.png" id="1_2u8fp"]
 [ext_resource type="Script" uid="uid://ddwckbt8kflwo" path="res://scenes/collision_box.gd" id="1_pvrii"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(20, 15.833334)
+size = Vector2(28.666668, 11.5)
 
 [node name="FinishArea2D" type="Area2D" unique_id=1438358285]
 collision_mask = 0
@@ -14,7 +13,3 @@ script = ExtResource("1_pvrii")
 position = Vector2(0, 0.49999952)
 scale = Vector2(6, 6)
 shape = SubResource("RectangleShape2D_g4v7s")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1538680308]
-scale = Vector2(6, 6)
-texture = ExtResource("1_2u8fp")
