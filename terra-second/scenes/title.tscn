@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://biibmr25d7nqi"]
 
 [ext_resource type="FontFile" uid="uid://cnredbe6uqgcv" path="res://fonts/PeaberryDoublespace.woff2" id="1_4ignj"]
+[ext_resource type="Script" uid="uid://pyf1ancem32e" path="res://scenes/title.gd" id="1_p6dhs"]
 [ext_resource type="Texture2D" uid="uid://bkgrir378horu" path="res://graphics/player/player_simple.png" id="2_wosw1"]
 
 [node name="Title" type="Control" unique_id=386927762]
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_p6dhs")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=885988510]
 layout_mode = 1
@@ -52,19 +54,54 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_wosw1")
 
-[node name="Label2" type="Label" parent="." unique_id=278892864]
+[node name="ScoreLabel" type="Label" parent="." unique_id=1636016218]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -59.0
-offset_top = 329.0
-offset_right = 59.0
+offset_left = -20.0
+offset_top = 239.0
+offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_4ignj")
 theme_override_font_sizes/font_size = 50
-text = "High score: 123"
+text = "Score = 123"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="." unique_id=2093805101]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.5
+offset_top = 402.0
+offset_right = 34.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_4ignj")
+theme_override_font_sizes/font_size = 50
+text = "Coins = 5"
+
+[node name="Label3" type="Label" parent="." unique_id=1604579908]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = 257.25
+offset_right = 130.0
+offset_bottom = 308.25
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_4ignj")
+theme_override_font_sizes/font_size = 30
+text = "Press Space to restart!"

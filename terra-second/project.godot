@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.7", "Forward Plus")
 run/max_fps=60
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*uid://cbitvb7yjqtrw"
+
 [display]
 
 window/size/viewport_width=1280
@@ -26,6 +30,10 @@ window/stretch/aspect="expand"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
+
+[global_group]
+
+player=""
 
 [input]
 

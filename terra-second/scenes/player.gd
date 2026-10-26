@@ -1,16 +1,16 @@
 extends CharacterBody2D
 
-var direction: Vector2 = Vector2.ZERO
-var speed: int = 10000
+var direction: Vector2 #default is zero
+var speed: int = 6000
+
+func _ready() -> void:
+	add_to_group("player")
 
 func _physics_process(delta: float) -> void:
 	direction = Input.get_vector("left", "right", "up", "down")
 	velocity = direction * speed * delta
 	animation()
 	move_and_slide()
-	
-	if Input.is_action_just_pressed("jump"):
-		print("something")
 
 func animation():
 	if direction:

@@ -25,6 +25,13 @@
 [ext_resource type="Texture2D" uid="uid://dxciltwc3sgll" path="res://graphics/objects/house2.png" id="23_bt5mj"]
 [ext_resource type="FontFile" uid="uid://hqpa84d2dqvp" path="res://fonts/Better VCR 9.0.1.ttf" id="24_e1j6l"]
 [ext_resource type="Script" uid="uid://gc3fe0iuxkhn" path="res://scenes/label.gd" id="25_pl11u"]
+[ext_resource type="Texture2D" uid="uid://cq15t5ixf8by8" path="res://graphics/bulding_block_3.png" id="26_suyxu"]
+[ext_resource type="Texture2D" uid="uid://b7iafdmr8thug" path="res://graphics/player/New Piskel (1).png" id="26_wljb1"]
+[ext_resource type="Texture2D" uid="uid://cr6bm7gs6m30q" path="res://graphics/bicycle (1).png" id="27_sgl2t"]
+[ext_resource type="Texture2D" uid="uid://c2xpbpsc7qx48" path="res://graphics/dual_carriageway.png" id="28_qouja"]
+[ext_resource type="Texture2D" uid="uid://bybru4g5rf1e6" path="res://graphics/border.png" id="29_sgl2t"]
+[ext_resource type="Texture2D" uid="uid://cqx7os33lfoo8" path="res://graphics/three_lanes.png" id="29_wljb1"]
+[ext_resource type="PackedScene" uid="uid://t4u7asbh87lm" path="res://scenes/coin.tscn" id="31_qouja"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(20, 640)
@@ -542,11 +549,12 @@ position = Vector2(-199, -114)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2077301863]
 
-[node name="Label" type="Label" parent="CanvasLayer" unique_id=1814986693]
-anchors_preset = 5
+[node name="TimeLabel" type="Label" parent="CanvasLayer" unique_id=1814986693]
+anchors_preset = -1
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -166.25
+offset_top = 20.0
 offset_right = 166.25
 offset_bottom = 55.0
 grow_horizontal = 2
@@ -558,6 +566,44 @@ theme_override_font_sizes/font_size = 20
 text = "Time elapsed: 0"
 script = ExtResource("25_pl11u")
 
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1308050670]
+offset_right = 108.0
+offset_bottom = 162.0
+texture = ExtResource("26_wljb1")
+expand_mode = 5
+
+[node name="CoinLabel" type="Label" parent="CanvasLayer" unique_id=1247337969]
+anchors_preset = -1
+offset_left = 50.0
+offset_top = 13.0
+offset_right = 148.0
+offset_bottom = 46.0
+theme_override_fonts/font = ExtResource("24_e1j6l")
+theme_override_font_sizes/font_size = 25
+text = "= 0"
+
+[node name="ThreeLanes" type="Sprite2D" parent="." unique_id=400558286]
+position = Vector2(649, 397)
+texture = ExtResource("29_wljb1")
+
+[node name="DualCarriageway" type="Sprite2D" parent="." unique_id=1592075550]
+position = Vector2(934, 129)
+texture = ExtResource("28_qouja")
+
+[node name="BuldingBlock3" type="Sprite2D" parent="." unique_id=42247786]
+position = Vector2(582, 556)
+texture = ExtResource("26_suyxu")
+
+[node name="Border" type="Sprite2D" parent="." unique_id=619463710]
+position = Vector2(1066, 527)
+texture = ExtResource("29_sgl2t")
+
+[node name="Bicycle(1)" type="Sprite2D" parent="." unique_id=903532199]
+position = Vector2(558, 205)
+texture = ExtResource("27_sgl2t")
+
+[node name="Coin" parent="." unique_id=356997980 instance=ExtResource("31_qouja")]
+
 [connection signal="body_entered" from="Borders/FinishArea2D" to="." method="_on_finish_area_entered"]
 [connection signal="timeout" from="Timer/CarTimer" to="." method="_on_car_timer_timeout"]
-[connection signal="timeout" from="Timer/ElapsedTimer" to="CanvasLayer/Label" method="_on_elapsed_timer_timeout"]
+[connection signal="timeout" from="Timer/ElapsedTimer" to="CanvasLayer/TimeLabel" method="_on_elapsed_timer_timeout"]
