@@ -5,3 +5,7 @@ The application consists of a crossy roads-esque game where the player must get 
 The main gameplay loop consists of gathering coins and getting to the end of the level.
 
 Assets were borrowed from [https://www.youtube.com/watch?v=RiQcnVgBhFE](https://youtu.be/TLG2yVpLDT8?si=Ay2GzbRtnw8huJms) tutorial.
+
+How to play:
+- Use the following link to the itch.io webpage: https://dzsi-dzimi.itch.io/dynamic-crossy-roads
+- Or clone the repository to your local machine.
